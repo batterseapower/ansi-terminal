@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ansi-terminal @ GitHub</title>
+    <link rel="stylesheet" href="http://batterseapower.github.com/styles/main.css">
+</head>
+<body>
+    <a href="http://github.com/batterseapower/ansi-terminal">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+    </a>
+    <div id="container">
+        <!--
+        <div class="download">
+            <a href="http://github.com/batterseapower/ansi-terminal/zipball/master">
+                <img border="0" width="90" src="http://github.com/images/modules/download/zip.png">
+            </a>
+            <a href="http://github.com/batterseapower/ansi-terminal/tarball/master">
+                <img border="0" width="90" src="http://github.com/images/modules/download/tar.png">
+            </a>
+        </div>
+        -->
+        
+        <h1>
+            <a href="http://github.com/batterseapower/ansi-terminal">ansi-terminal</a>
+            <span class="small">by
+                <a href="http://github.com/batterseapower">Max Bolingbroke</a>
+            </span>
+        </h1>
+        
+        <div class="description">
+            Haskell ANSI Terminal Package For Windows, OS X and Linux
+        </div>
+        
+        <h2>Description</h2>
+        <div class="section">
+            <p><a href=":http://en.wikipedia.org/wiki/ANSI_escape_sequences">ANSI</a> terminal support for Haskell, which allows:
+               <ul>
+                   <li>Cursor movement</li>
+                   <li>Screen and line clearing</li>
+                   <li>Color output</li>
+                   <li>Showing or hiding the cursor</li>
+                   <li>Changing the console title (though this is not strictly part of ANSI, it is widely supported in Unix)</li>
+               </ul></p>
+         
+             <p>It is compatible with Windows (via an emulation layer) and those Unixes with ANSI terminals.</p>
+         
+             <p>If you like this, you may be interested in <a href="http://github.com/batterseapower/ansi-wl-pprint">ansi-wl-pprint</a>,
+                 which provides a pretty-printer that can construct strings containing ANSI colorisation.</p>
+        </div>
+        
+        <h2>Example</h2>
+        <div class="section">
+            <p>A full example is <a href="http://github.com/batterseapower/ansi-terminal/tree/master/System/Console/ANSI/Example.hs">available</a>,
+               but for a taste of how the library works try the following code:</p>
+            <pre>
+import System.Console.ANSI
+
+main = do
+    setCursorPosition 5 0
+    setTitle "ANSI Terminal Short Example"
+
+    setSGR [ SetConsoleIntensity BoldIntensity
+           , SetColor Foreground Vivid Red
+           ]
+    putStr "Hello"
+    
+    setSGR [ SetConsoleIntensity NormalIntensity
+           , SetColor Foreground Vivid White
+           , SetColor Background Dull Blue
+           ]
+    putStrLn "World!"
+            </pre>
+            
+            <div class="screenshotframe">
+                <img class="screenshot" src="images/example.png" />
+            </div>
+        </div>
+        
+        <h2>Documentation</h2>
+        <p>Haddock documentation is <a href="http://hackage.haskell.org/packages/archive/ansi-terminal/0.5.0/doc/html/System-Console-ANSI.html">available at Hackage</a>.</p>
+        
+        <h2>Download</h2>
+        <div class="section">
+            <div class="downloadoption">
+                <div class="downloadoptionimage">
+                    <a href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/ansi-terminal">
+                        <img width="90" src="http://batterseapower.github.com/images/cabal-cube.png" />
+                    </a>
+                </div>
+                <div class="downloadoptiontext">
+                    <p>Install with Cabal:
+                       <pre>$ sudo cabal install ansi-terminal</pre></p>
+                </div>
+                <div style="clear: both;"></div> <!-- force the div to clear so downloadoption encompasses the other two divs -->
+            </div>
+            <div class="downloadoption">
+                <div class="downloadoptionimage">
+                    <a href="http://github.com/batterseapower/ansi-terminal/zipball/master">
+                        <img width="90" src="http://github.com/images/modules/download/zip.png" />
+                    </a>
+                </div>
+                <div class="downloadoptiontext">
+                    <p>Download this project in either <a href="http://github.com/batterseapower/ansi-terminal/zipball/master">
+                       zip</a> or <a href="http://github.com/batterseapower/ansi-terminal/tarball/master">tar</a> formats.</p>
+                </div>
+                <div style="clear: both;"></div> <!-- force the div to clear so downloadoption encompasses the other two divs -->
+            </div>
+            <div class="downloadoption">
+                <div class="downloadoptionimage">
+                    <a href="http://github.com/batterseapower/ansi-terminal">
+                        <img width="90" src="http://batterseapower.github.com/images/git.png" />
+                    </a>
+                </div>
+                <div class="downloadoptiontext">
+                    <p>Clone the project with <a href="http://git-scm.com">Git</a>:
+                       <pre>$ git clone git://github.com/batterseapower/ansi-terminal</pre><br />
+                       Alternatively, browse the source on <a href="http://github.com/batterseapower/ansi-terminal">GitHub</a></p>
+                </div>
+                <div style="clear: both;"></div> <!-- force the div to clear so downloadoption encompasses the other two divs -->
+            </div>
+        </div>
+        
+        <h2>Contact</h2>
+        <p>You can submit a ticket at <a href="http://bsp.lighthouseapp.com/projects/16235-hs-ansi-terminal">Lighthouse</a> to
+           report a bug.</p>
+        
+        <p>Other enquiries can be directed to me <a href="mailto:batterseapower@hotmail.com">via email</a></p>
+    </div>
+</body>
