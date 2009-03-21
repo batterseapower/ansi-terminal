@@ -45,8 +45,18 @@ lighthouse_url: http://bsp.lighthouseapp.com/projects/16235-hs-ansi-terminal
          
              <p>It is compatible with Windows (via an emulation layer) and those Unixes with ANSI terminals.</p>
          
-             <p>If you like this, you may be interested in <a href="http://github.com/{{ page.username }}/ansi-wl-pprint">ansi-wl-pprint</a>,
+             <p>If you like this, you may be interested in <a href="http://github.com/batterseapower/ansi-wl-pprint">ansi-wl-pprint</a>,
                  which provides a pretty-printer that can construct strings containing ANSI colorisation.</p>
+             
+             <p>Not all of the ANSI escape codes are provided by this module, but most (if not all) of the popular and well supported ones are.
+                For a full list, have a look at the <a href="http://github.com/{{ page.username }}/{{ page.repository }}/tree/master/includes/Common-Include.hs">current
+                version of the API</a>. Each supported escape code or family of codes has a corresponding function that comes in three variants:</p>
+            
+             <ul>
+                 <li>A straight <code>IO</code> variant that doesn't take a <code>Handle</code> and just applies the ANSI escape code to the terminal attached to stdout</li>
+                 <li>An <code>IO</code> variant similar to above, but which takes a <code>Handle</code> to which the ANSI escape should be applied</li>
+                 <li>A <code>String</code> variant that returns a literal string that should be included to get the effect of the code. This is the only one of the three API variants that only works on Unix-like operating systems: on Windows these strings will always be blank!</li>
+             </ul>
         </div>
         
         <h2>Example</h2>
